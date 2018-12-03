@@ -27,7 +27,7 @@
                 });
         }
        function fetchDemo(){
-          var TestClass = ncmb.DataStore("TestClass1");
+          var TestClass = ncmb.DataStore("TestClass");
           TestClass.fetch()
           .then(function(results){
             var data =results.get("message");
@@ -39,11 +39,11 @@
         function fetchAll(){
           var TestClass = ncmb.DataStore("TestClass");
           .then(function(results){
-            var msg = " ";
+            var msg = "";
             for(var i =0 ; i < results.length ; i++){
               var data = results[i].get("message");
               var update = results[i].get("updateDate");
-              msg += data + " : " + update ;
+              msg += data + " : " + update +"￥n";
             }
             $("#fetch").html(msg);
           })
@@ -55,10 +55,10 @@
     <a class="button--large" onclick="startDemo()">Start Demo</a>
     <div>Touch Start Demo to save {"message":"Hello, NCMB!"} to mobile backend.</div>
     <a class="button--large" onclick="fetchDemo()">Fetch Demo</a>
-    <div>fetch Demo </div>
+    <div>fetch Demo</div>
     <a class="button--large" onclick="fetchAll()">Fetch All</a>
-    <div>fetch all demo </div>
-    <div id = "fetch"> data here </div>
+    <div>fetch all demo</div>
+    <div id = "fetch">data here</div>
     
 </body>
 </html>
